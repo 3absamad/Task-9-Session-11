@@ -21,7 +21,14 @@ namespace Task_9_Session_11
         //User-Defined Delegate Function
         public static decimal CalculateOrderPrice1(Order order, PriceCalculator priceCalculator) => priceCalculator(order);
 
-        //Built-In Delegate Function
+        //Built-In Delegate Function (Func)
         public static decimal CalculateOrderPrice2(Order order, Func<Order, decimal> calculator) => calculator(order);
+
+        //Built-In Delegate Function (Predicate)
+        public static bool ValidateOrder(Order order, Predicate<Order> validationRule) => validationRule(order);
+
+        //Built-In Delegate Function (Action)
+        public static void ProcessOrder(Order order, Action<Order> action) => action(order);
+
     }
 }

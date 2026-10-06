@@ -83,7 +83,27 @@ namespace Task_9_Session_11
 
             #region Predicate Delegate
 
+            //Console.WriteLine(OrderService.ValidateOrder(order, order => order.Quantity > 0));
+            //Console.WriteLine(OrderService.ValidateOrder(order, order => order.Price > 0));
+            //Console.WriteLine(OrderService.ValidateOrder(order, order => order.CustomerName is not null));
+
             #endregion
+
+            #region Action Delegate
+
+            //Print Order Info
+            //Action<Order> printInfo = order => Console.WriteLine($"[Order Info] Id: {order.Id}, Customer Name: {order.CustomerName}, " +
+            //                                                     $"Price: {order.Price}, Quantity: {order.Quantity}");
+            //OrderService.ProcessOrder(order, printInfo);
+
+            ////Print Confirmation Message
+            //Action<Order> confirmationMesage = order => Console.WriteLine($"Confirmation sent to {order.CustomerName}");
+            //OrderService.ProcessOrder(order, confirmationMesage);
+
+            ////Print Audit Message (Another way)
+            //OrderService.ProcessOrder(order, order => Console.WriteLine($"Audit: Order {order.Id} was processed"));
+            #endregion
+
 
             #endregion
 
