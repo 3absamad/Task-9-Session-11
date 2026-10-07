@@ -6,6 +6,18 @@ namespace Task_9_Session_11
 {
     public class OrderService
     {
+        public static event Action<Order> orderProcessed;
+
+        public static void ProcessOrder(Order order)
+        {
+            Console.WriteLine($"Processing Order {order.Id}...");
+
+            Console.WriteLine("Order processed successfully.");
+
+            orderProcessed?.Invoke(order);
+        }
+
+
         public delegate decimal PriceCalculator(Order order);
 
         public static decimal CalculateTotal(Order order) => order.Price * order.Quantity;
